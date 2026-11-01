@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   const prefersLight=window.matchMedia?.('(prefers-color-scheme: light)').matches;
   const setTheme=light=>{
     document.body.classList.toggle('light',light);
+    document.querySelectorAll('.brand-logo').forEach(logo=>{
+      logo.src=light?'assets/logo-light.png':'assets/logo_dark.png';
+    });
     theme?.setAttribute('aria-pressed',String(light));
     if(theme){theme.textContent=light?'☾':'☀';theme.title=light?'Use dark mode':'Use light mode'}
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content',light?'#f4f7fb':'#0b1220');
