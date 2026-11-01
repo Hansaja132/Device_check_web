@@ -7,7 +7,8 @@
 - `css/style.css`: shared styling
 - `js/common.js`: shared navigation/theme code
 - `js/camera.js`, `microphone.js`, `audio.js`, `keyboard.js`, `mouse.js`, `screen.js`, `internet.js`: separate tool modules. Speaker and headphone pages share `audio.js`.
-- `assets/favicon.svg`: favicon
+- `assets/favicon.png`: browser favicon
+- `assets/logo.png`: responsive header wordmark
 - `robots.txt`, `sitemap.xml`: crawling helpers
 
 ## Launch locally
