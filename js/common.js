@@ -1,0 +1,5 @@
+'use strict';
+const $=id=>document.getElementById(id);
+const setText=(id,text)=>{const el=$(id);if(el)el.textContent=text};
+const errorMessage=e=>({NotAllowedError:'Permission was denied. Allow access in browser settings.',NotFoundError:'No suitable device was found.',NotReadableError:'Device is busy or unavailable.',OverconstrainedError:'The requested device settings are unavailable.'}[e?.name]||e?.message||'This feature is unavailable in this browser.');
+document.addEventListener('DOMContentLoaded',()=>{const current=document.body.dataset.page;document.querySelectorAll('[data-page]').forEach(a=>{if(a.tagName==='A'&&a.dataset.page===current)a.setAttribute('aria-current','page')});const menu=$('menuButton');menu?.addEventListener('click',()=>{const opened=$('nav').classList.toggle('open');menu.setAttribute('aria-expanded',String(opened))});const theme=$('themeButton');if(localStorage.getItem('devicecheck-theme')==='light')document.body.classList.add('light');theme?.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('devicecheck-theme',document.body.classList.contains('light')?'light':'dark')})});

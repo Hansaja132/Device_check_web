@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/index.html</loc></url>
+  <url><loc>https://example.com/camera.html</loc></url>
+  <url><loc>https://example.com/microphone.html</loc></url>
+  <url><loc>https://example.com/speakers.html</loc></url>
+  <url><loc>https://example.com/headphones.html</loc></url>
+  <url><loc>https://example.com/keyboard.html</loc></url>
+  <url><loc>https://example.com/mouse.html</loc></url>
+  <url><loc>https://example.com/screen.html</loc></url>
+  <url><loc>https://example.com/internet.html</loc></url>
+  <url><loc>https://example.com/privacy.html</loc></url>
+</urlset>
