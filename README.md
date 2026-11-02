@@ -15,8 +15,24 @@
 ## Launch locally
 In this folder run `python -m http.server 8000`, then visit `http://localhost:8000`.
 
-## Publish
-Upload ALL the files and folders, keeping paths unchanged, to a static hosting provider such as Cloudflare Pages, Netlify, or GitHub Pages. Use HTTPS.
+## Automatic deployment to free-hosting.org
+
+Every push to `main` runs `.github/workflows/deploy.yml`. The workflow validates the static site, collects only the public files in `dist/`, and uploads them to the hosting account over FTP. It can also be started manually from the repository's **Actions** tab.
+
+In the GitHub repository, open **Settings > Secrets and variables > Actions** and add these repository secrets:
+
+- `FTP_SERVER`: the FTP hostname shown in the hosting control panel; enter only the hostname, without `ftp://`
+- `FTP_USERNAME`: the hosting account's FTP username
+- `FTP_PASSWORD`: the hosting account's FTP password
+- `FTP_SERVER_DIR`: the domain's document-root directory, including a trailing slash (commonly `/htdocs/` or `/public_html/`; use the exact directory shown by the control panel)
+
+Do not commit the FTP credentials to this repository. The workflow exposes them only to the deployment action. The first deployment may take longer; later deployments synchronize only changed files. Files removed from the site source are also removed from the remote deployment directory, so `FTP_SERVER_DIR` must point only to this site's web root.
+
+The workflow uses standard FTP because that is the service advertised by free-hosting.org. If the account's FTP settings explicitly support FTPS, change `protocol: ftp` to `protocol: ftps` in the workflow so credentials are encrypted in transit.
+
+## Manual publishing
+
+Upload all public files and folders, keeping paths unchanged, to a static hosting provider. Use HTTPS for the published website.
 
 SEO metadata currently uses the GitHub Pages URL inferred from this repository: `https://hansaja132.github.io/Device_check_web/`. If the site is deployed at another URL or a custom domain, replace that base URL in `.html`, `robots.txt`, and `sitemap.xml` before launch. Canonical and social URLs must match the public production URL exactly.
 
