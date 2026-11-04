@@ -52,4 +52,27 @@ document.addEventListener('DOMContentLoaded',()=>{
     setTheme(light);
     try{localStorage.setItem('devicecheck-theme',light?'light':'dark')}catch(error){}
   });
+
+  const adAnchor=document.querySelector('main > .panel:not(.editorial)')||$('tools');
+  if(adAnchor){
+    const adScript=document.createElement('script');
+    adScript.async=true;
+    adScript.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6122042652683931';
+    adScript.crossOrigin='anonymous';
+    document.head.append(adScript);
+
+    const adBanner=document.createElement('aside');
+    adBanner.className='ad-banner';
+    adBanner.setAttribute('aria-label','Advertisement');
+    const adUnit=document.createElement('ins');
+    adUnit.className='adsbygoogle';
+    adUnit.style.display='block';
+    adUnit.dataset.adClient='ca-pub-6122042652683931';
+    adUnit.dataset.adSlot='8235759721';
+    adUnit.dataset.adFormat='auto';
+    adUnit.dataset.fullWidthResponsive='true';
+    adBanner.append(adUnit);
+    adAnchor.insertAdjacentElement('afterend',adBanner);
+    (window.adsbygoogle=window.adsbygoogle||[]).push({});
+  }
 });

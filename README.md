@@ -43,4 +43,4 @@ Add your verified site to Google Search Console and submit `sitemap.xml`. Publis
 - Most tests run in-browser. Network test downloads a 5 MB file from Cloudflare's speed endpoint. Endpoint availability / CORS support can change. The speed test measures download only, not upload or precise ping.
 - Keyboards can send browser-intercepted or OS-intercepted events; keyboard visuals approximate standard layouts, not exact custom PCBs.
 - Speaker/headphone output cannot be measured physically by browsers; user's hearing determines success.
-- No third-party trackers, ads, or analytics are included.
+- Google AdSense is loaded on the homepage and device-tool pages. Keep the privacy disclosure and any consent controls required for the site's audience up to date.
