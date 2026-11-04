@@ -34,7 +34,7 @@ The workflow uses standard FTP because that is the service advertised by free-ho
 
 Upload all public files and folders, keeping paths unchanged, to a static hosting provider. Use HTTPS for the published website.
 
-SEO metadata currently uses the GitHub Pages URL inferred from this repository: `https://hansaja132.github.io/Device_check_web/`. If the site is deployed at another URL or a custom domain, replace that base URL in `.html`, `robots.txt`, and `sitemap.xml` before launch. Canonical and social URLs must match the public production URL exactly.
+SEO metadata uses the production URL `https://devicecheck.yzz.me/`. If the site moves to another URL, replace that base URL in `.html`, `robots.txt`, and `sitemap.xml`. Canonical and social URLs must match the public production URL exactly.
 
 Add your verified site to Google Search Console and submit `sitemap.xml`. Publish accurate contact details and update the privacy policy if adding analytics, advertising or other third-party code.
 

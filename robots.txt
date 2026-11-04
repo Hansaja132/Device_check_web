@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hansaja132.github.io/Device_check_web/sitemap.xml
+Sitemap: https://devicecheck.yzz.me/sitemap.xml
